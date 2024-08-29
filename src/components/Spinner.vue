@@ -1,4 +1,5 @@
 <template>
+
   <div class="d-flex justify-content-center">
     <div class="spinner-border" role="status"></div>
   </div>
@@ -7,6 +8,7 @@
     <span class="visually-hidden">Loading...</span>
   </div> -->
 </template>
+
 <script>
 export default {
   name: "SpinnerComp",
