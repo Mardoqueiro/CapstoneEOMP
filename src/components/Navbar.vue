@@ -1,5 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
+    
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
