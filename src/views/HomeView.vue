@@ -41,7 +41,7 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('recentCars')
+    this.$store.dispatch('fetchCars')
   }
 }
 </script>

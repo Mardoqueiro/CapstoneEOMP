@@ -1,44 +1,57 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import AdminView from '@/views/AdminView.vue'
-import ProductsView from '@/views/ProductsView.vue'
-import ProductDetailView from '@/views/ProductView.vue'
-import ContactView from '@/views/ContactView.vue'
+
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: () => import('@/views/HomeView.vue')
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('@/views/AboutView.vue')
+  },
+  {
+    path: '/cars',
+    name: 'cars',
+    component: () => import('@/views/CarsView.vue')
+  },
+  // {
+  //   path: '/product/:id',
+  //   name: 'product',
+  //   component: () => import('@/views/ProductDetails.vue')
+  // },
+  {
+    path: '/checkout',
+    name: 'checkout',
+    component: () => import('@/views/CheckoutView.vue')
   },
   {
     path: '/admin',
     name: 'admin',
-    component: AdminView
+    component: () => import('@/views/AdminView.vue')
   },
   {
-    path: '/products',
-    name: 'products',
-    component: ProductsView
+    path: '/contactUs',
+    name: 'contactUs',
+    component: () => import('@/views/ContactUs.vue')
+  },
+  // {
+  //   path: '/login',
+  //   name: 'login',
+  //   component: () => import('@/views/LoginView.vue')
+  // },
+  // {
+  //   path: '/logout',
+  //   name: 'logout',
+  //   component: () => import('@/views/LoginView.vue')
+  // },
+  // {
+  //   path: '/signup',
+  //   name: 'signup',
+  //   component: () => import('@/views/SignUp.vue')
+  // }
 
-  },
-  {
-    path: '/product/:id',
-    name: 'ProductDetailView',
-    component: ProductDetailView
-  },
-  {
-    path: '/contact',
-    name: 'contact',
-    component: ContactView
-  }
 ]
 
 const router = createRouter({

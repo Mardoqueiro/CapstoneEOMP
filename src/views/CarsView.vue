@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <h2 class="display-2">Contact us</h2>
+            <h2 class="display-2">Cars</h2>
         </div>
     </div>
 </template>
