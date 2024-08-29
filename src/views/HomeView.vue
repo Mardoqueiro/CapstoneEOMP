@@ -4,19 +4,19 @@
       <h2 class="display-2">Welcome to our store</h2>
     </div>
     <div class="row">
-      <h4 class="display-4">Recent products</h4>
+      <h4 class="display-4">Recent cars</h4>
     </div>
-    <div class="row gap-2 justify-content-center" v-if="recentProducts">
+    <div class="row gap-2 justify-content-center" v-if="recentCars">
 
-      <Card v-for="product in recentProducts" :key="product.productID">
+      <Card v-for="car in recentCars" :key="car.carID">
         <template #cardHeader>
-          {{ product.productURL }}
-          <img :src="product.prodURL" loading="lazy" class="img-fluid" :alt="product.prodName">
+          {{ car.imageUrl }}
+          <img :src="car.imageUrl" loading="lazy" class="img-fluid" :alt="car.carName">
         </template>
         <template #cardBody>
-          <h5 class="card-title fw-bold">{{ product.prodName }}</h5>
-          <p class="lead">{{ product.prodDescription }}</p>
-          <p class="lead"><span class="text-success fw-bold">Amount</span>: R{{ product.amount }}</p>
+          <h5 class="card-title fw-bold">{{ car.carName }}</h5>
+          <!-- <p class="lead">{{ car.prodDescription }}</p> -->
+          <p class="lead"><span class="text-success fw-bold">Price</span>: R{{ car.price }}</p>
         </template>
       </Card>
     </div>
@@ -36,12 +36,12 @@ export default {
     Spinner
   },
   computed: {
-    recentProducts() {
-      return this.$store.state.recentProducts
+    recentCars() {
+      return this.$store.state.recentCars
     }
   },
   mounted() {
-    this.$store.dispatch('recentProducts')
+    this.$store.dispatch('recentCars')
   }
 }
 </script>
