@@ -8,27 +8,27 @@ const carRouter = express.Router()
 carRouter.use(bodyParser.json())
 // verifyAToken,
 carRouter.get('/',  (req, res) => {
-    cars.fetchcars(req, res)
+    cars.fetchCars(req, res)
 })
 
 carRouter.get('/recent', (req, res) => {
-    cars.recentcars(req, res)
+    cars.recentCars(req, res)
 })
 // verifyAToken,
 carRouter.get('/:id', (req, res) => {
-    cars.fetchcar(req, res)
+    cars.fetchCar(req, res)
 })
 // verifyAToken,
 carRouter.post('/add', (req, res) => {
-    cars.addcar(req, res)
+    cars.addCar(req, res)
 })
 // verifyAToken,
 carRouter.patch('/:id', (req, res) => {
-    cars.updatecar(req, res)
+    cars.updateCar(req, res)
 })
 // verifyAToken,
 carRouter.delete('/:id', (req, res) => {
-    cars.deletecar(req, res)
+    cars.deleteCar(req, res)
 })
 
 export { carRouter }
