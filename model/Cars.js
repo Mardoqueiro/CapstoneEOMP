@@ -4,7 +4,7 @@ class Cars {
     fetchCars(req, res) {
         try {
             const strQry = `
-            SELECT prodID, prodName, quantity, amount, category, prodUrl
+            SELECT carID, carName, brand, model, modelYear, price, batteryCapacity, rangeKM, chargingTime, imageUrl, stockQuantity
             FROM Cars;
             `
             db.query(strQry, (err, results) => {
@@ -25,9 +25,9 @@ class Cars {
     recentCars(req, res) {
         try {
             const strQry = `
-            SELECT prodID, prodName, quantity, amount, category, prodUrl
+            SELECT carID, carName, brand, model, modelYear, price, batteryCapacity, rangeKM, chargingTime, imageUrl, stockQuantity
             FROM Cars
-            ORDER BY prodID DESC
+            ORDER BY carID DESC
             LIMIT 5;
             `
             db.query(strQry, (err, results) => {
@@ -48,9 +48,9 @@ class Cars {
     fetchCar(req, res) {
         try {
             const strQry = `
-            SELECT prodID, prodName, quantity, amount, category, prodUrl
+            SELECT carID, carName, brand, model, modelYear, price, batteryCapacity, rangeKM, chargingTime, imageUrl, stockQuantity
             FROM Cars
-            WHERE prodID = ${req.params.id};
+            WHERE carID = ${req.params.id};
             `
             db.query(strQry, (err, result) => { 
                 if (err) throw new Error('Unable to retrieve a Car')
@@ -93,7 +93,7 @@ class Cars {
             const strQry = `
             UPDATE Cars
             SET ?
-            WHERE prodID = ${req.params.id};
+            WHERE carID = ${req.params.id};
             `
             db.query(strQry, [req.body], (err) => { 
                 if (err) throw new Error(err.message)
@@ -114,7 +114,7 @@ class Cars {
         try {
             const strQry = `
             DELETE FROM Cars
-            WHERE prodID = ${req.params.id};
+            WHERE carID = ${req.params.id};
             `
             db.query(strQry, (err) => { 
                 if (err) throw new Error('Unable to delete a Car')
