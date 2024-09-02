@@ -1,32 +1,4 @@
 <template>
-  <div class="container">
-
-
-    <div class="row">
-      <h2 class="display-2">Welcome to our store</h2>
-    </div>
-    <div class="row">
-      <h4 class="display-4">Recent cars</h4>
-    </div>
-    <div class="row gap-2 justify-content-center" v-if="recentCars">
-      <Card v-for="car in recentCars" :key="car.carID">
-        <template #cardHeader>
-          {{ car.imageUrl }}
-          <img :src="car.imageUrl" loading="lazy" class="img-fluid" :alt="car.carName">
-        </template>
-        <template #cardBody>
-          <h5 class="card-title fw-bold">{{ car.carName }}</h5>
-          <p class="lead">{{ car.prodDescription }}</p>
-          <p class="lead"><span class="text-success fw-bold">Price</span>: R{{ car.price }}</p>
-        </template>
-      </Card>
-    </div>
-    <div v-else>
-      <Spinner />
-    </div>
-  </div>
-
-
   <main class="main">
       <!-- ============= HOME ============ -->
       <div class="shape shape__big"></div>
@@ -43,6 +15,25 @@
               <i class="ri-flashlight-fill"></i>
               Electric Car
             </h3>
+          </div>
+          <!-- <div class="row">
+            <h4 class="display-4">Recent cars</h4>
+          </div> -->
+          <div class="row gap-2 justify-content-center" v-if="recentCars">
+            <Card v-for="car in recentCars" :key="car.carID">
+              <template #cardHeader>
+                {{ car.imageUrl }}
+                <img :src="car.imageUrl" loading="lazy" class="img-fluid" :alt="car.carName">
+              </template>
+              <template #cardBody>
+                <h5 class="card-title fw-bold">{{ car.carName }}</h5>
+                <p class="lead">{{ car.prodDescription }}</p>
+                <p class="lead"><span class="text-success fw-bold">Price</span>: R{{ car.price }}</p>
+              </template>
+            </Card>
+          </div>
+          <div v-else>
+            <Spinner />
           </div>
 
           <img
@@ -80,41 +71,7 @@
           <a href="#" class="home__button">START</a>
         </div>
       </section>
-
-      <!-- ======== ABOUT ==============-->
-      <section class="about section" id="about">
-        <div class="about__container container grid">
-          <div class="about__group">
-            <img
-              src="https://raw.githubusercontent.com/bedimcode/responsive-car-website/main/assets/img/about.png"
-              alt=""
-              class="about__img"
-            />
-            <div class="about__card">
-              <h3 class="about__card-title">2.500+</h3>
-              <p class="about__card-description">
-                Supercharges places along popular routes
-              </p>
-            </div>
-          </div>
-
-          <div class="about__data">
-            <h2 class="section__title about__title">
-              Machines with <br />
-              Future Technology
-            </h2>
-
-            <p class="about__description">
-              See the future with high-perfomace electric cars produced by
-              renownes brands. They feature futuristic builds and designs with
-              new and innovative platforms that last a long time.
-            </p>
-
-            <a href="#" class="button">Know more</a>
-          </div>
-        </div>
-      </section>
-
+      
       <!-- ========== POPULAR =========== -->
       <section class="popular section" id="popular">
         <h2 class="section__title">
