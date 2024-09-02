@@ -7,7 +7,6 @@
       <h4 class="display-4">Recent cars</h4>
     </div>
     <div class="row gap-2 justify-content-center" v-if="recentCars">
-
       <Card v-for="car in recentCars" :key="car.carID">
         <template #cardHeader>
           {{ car.imageUrl }}
@@ -15,7 +14,7 @@
         </template>
         <template #cardBody>
           <h5 class="card-title fw-bold">{{ car.carName }}</h5>
-          <!-- <p class="lead">{{ car.prodDescription }}</p> -->
+          <p class="lead">{{ car.prodDescription }}</p>
           <p class="lead"><span class="text-success fw-bold">Price</span>: R{{ car.price }}</p>
         </template>
       </Card>
