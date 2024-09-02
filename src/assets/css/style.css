@@ -47,11 +47,11 @@
     } */
 
   /* All images */
-  img {
+  /* img {
       aspect-ratio: 1;
       object-fit: cover;
       object-position: center;
-  }
+  } */
 
   /* Logo */
   img[alt='logo'] {
@@ -71,7 +71,6 @@
   --header-height:3.5rem;
 
 /*  =========== COLORS =========== */
-/* COLOR MODE HSL(HUE,SATURATION,LIGHTNESS) */
 --first-color:rgb(65, 120, 220);
 --first-color-alt:rgb(48, 107, 217);
 --title-color:rgb(241, 242, 243);
@@ -82,7 +81,6 @@
 --container-color:rgb(17, 18, 19);
 
 /* ====== font and typography ======== */
-/*  .5rem = 8px | 1rem = 16px */
 --body-font:'Exo', sans-serif;; 
 --h1-font-size:1,5rem;
 --h2-font-size:1.25rem;
@@ -123,7 +121,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.template {
+body {
   font-family:var(--body-font);
   font-size: var(--normal-font-size);
   background-color:var(--body-color);
@@ -175,7 +173,7 @@ img {
 }
 
 .shape{
-  background-color: hsla(219, 33%, 32%, .5);
+  background-color: rgba(55, 74, 109, 0.5);
   filter: blur(112px);
   border-radius: 50%;
 }
@@ -246,7 +244,7 @@ img {
   }
   .nav__menu {
     position: fixed;
-    background-color: hsla(0, 0%, 100%, .1);
+    background-color: rgba(255, 255, 255, 0.1);
     top: 0;
     right: -100%;
     width: 100%;
@@ -294,7 +292,7 @@ transition: .3s;
 .scroll-header {
   border-radius: 0 0 1rem 1rem;
   background-color:var(--body-color);
-  box-shadow:0 2px 4px hsla(0, 0%, 1%, 1)
+  box-shadow:0 2px 4px rgb(3, 3, 3)
 }
 
 /*  ACTIVE LINK */
@@ -306,7 +304,7 @@ transition: .3s;
 .home{
   position: relative;
   overflow: hidden;
-  margin-top:-874px;                               /* NAO TEM NO ORIGNAL TALVEZ MUDAR*/
+  margin-top:-874px;                               
 }
 
 .home__container{
@@ -385,7 +383,7 @@ transition: .3s;
 
 .home__button {
   position: relative;
-  border: 2px solid hsl(158, 89%, 30%);
+  border: 2px solid rgb(8, 145, 95);
   width:70px;
   height: 70px;
   border-radius: 50%;
@@ -400,12 +398,12 @@ transition: .3s;
 
 .home__button::before {
   content: '';
-  border: 2px solid hsl(158, 98%, 43%);
+  border: 2px solid rgb(2, 217, 138);
   width: 90px;
   height: 90px;
   position:absolute;
   border-radius: 50%;
-  box-shadow: 0 0 12px hsl(158, 98%, 43%);
+  box-shadow: 0 0 12px rgb(2, 217, 138);
   transition:.3s;
   animation: button 3s infinite;
 }
@@ -428,10 +426,10 @@ transition: .3s;
 /* bUTTON ANIMATE */
 @keyframes button {
   0%{
-    box-shadow: 0 0 12px hsl(158, 98%, 43%);
+    box-shadow: 0 0 12px rgb(2, 217, 138);
   }
   50%{
-    box-shadow: 0 0 24px hsl(158, 98%, 43%);
+    box-shadow: 0 0 24px rgb(2, 217, 138);
 
   }
 }
@@ -469,7 +467,7 @@ transition: .3s;
   position: absolute;
   right: 0;
   bottom: -2.5rem;
-  background-color: hsla(0, 0%, 100%, .1);
+  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(16px);
   padding: 1rem .75rem;
   text-align: center;
@@ -615,7 +613,7 @@ transition: .3s;
 
 .features__card {
   width: 112px;
-  background-color:hsla(0, 0%, 100%, .1);
+  background-color:rgba(255, 255, 255, 0.1);
   backdrop-filter:blur(16px);
   border-radius: 1.25rem;
   padding: .75rem 2rem;
@@ -928,17 +926,17 @@ transition: .3s;
 /* ========= SCROLL BAR ============= */
 ::-webkit-scrollbar {
   width: 0.6rem;
-  background-color: hsla(219, 4%, 16%);
+  background-color: rgb(39, 40, 42);
   border-radius:1rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: hsl(219, 4%, 24%);
+  background-color: rgb(59, 60, 64);
   border-radius: 1rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(219, 4%, 32%);
+  background-color: rgb(78, 81, 85);
 }
 
 /* ========= SCROLL UP ============== */
@@ -946,7 +944,7 @@ transition: .3s;
   position: fixed;
   right: 1rem;
   bottom: -30%;
-  background-color: hsla(0, 0%, 100%, .1);
+  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(16px);
   display:inline-flex;
   padding:.45rem;

@@ -19,4 +19,10 @@
   .card {
       width: 18rem;
   }
+
+  img {
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: center;
+  }
   </style>
